@@ -5,7 +5,7 @@ from scipy.io import wavfile
 from scipy import signal
 
 
-fs, data = wavfile.read(r'C:\Users\kevink\Downloads\normal.wav')
+fs, data = wavfile.read(r'normal.wav')
 audio = data[:,0]
 
 def gen_delay(freq, r, phase, fs):
@@ -32,7 +32,8 @@ for i,sample in enumerate(audio):
 
 print("playing")
 y = array(y, dtype="int16")
-wavfile.write(r'C:\Users\kevink\Downloads\chorus.wav', fs, y)
+wavfile.write(r'chorus.wav', fs, y)
 
 sd.play(array(y, dtype="int16"), fs)
 
+input()
